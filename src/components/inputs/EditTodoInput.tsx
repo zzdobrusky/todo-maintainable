@@ -1,7 +1,7 @@
 import { KeyboardEvent } from 'react';
-import { TodoType } from "../types/types";
+import { TodoType } from "types";
 
-import './Todo.css';
+import styles from './shared.module.css';
 
 export const EditTodoInput = (
   {
@@ -30,7 +30,7 @@ export const EditTodoInput = (
         ?
         <input
           data-testid='todo-edit-input'
-          className='todo-edit'
+          className={styles.todo_edit}
           type='text'
           defaultValue={todo.content}
           onChange={(e) => onChangeItem(e.target.value, todo)}
@@ -38,14 +38,14 @@ export const EditTodoInput = (
         />
         :
         <div
-          className='todo-content'
+          className={styles.todo_content}
           data-completed={todo.completed}
           onClick={() => onToggleItem(todo)}
         >
           {todo.content}
         </div>
       }
-      <div className='todo-btn'>
+      <div className={styles.todo_btn}>
         <button
           data-testid='toggle-edit-button'
           onClick={() => onToggleEditItem(todo)}>

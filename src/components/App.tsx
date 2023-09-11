@@ -1,4 +1,3 @@
-import React from 'react';
 import { Todo } from './Todo';
 
 const items = [
@@ -20,12 +19,10 @@ const items = [
   },
 ];
 
-function App() {
-  return (
+const App = () =>  (
     <div>
       <Todo items={items} />
     </div>
   );
-}
 
 export default App;

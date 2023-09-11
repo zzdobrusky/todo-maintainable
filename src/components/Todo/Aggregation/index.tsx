@@ -1,10 +1,10 @@
-import { CategoryButton } from './CategoryButton';
-import { CATEGORIES, AggregationType } from "../types/types";
+import { CategoryButton } from 'components/buttons/CategoryButton';
+import { CATEGORIES, AggregationType } from "types";
 
-import './Todo.css';
+import styles from './index.module.css';
 
 export const Aggregation = ({ aggregation, switchCategory }: { aggregation: AggregationType, switchCategory: (type: CATEGORIES) => void }) => (
-  <div className='todo-aggregation'>
+  <div className={styles.todo_aggregation}>
     <CategoryButton
       title='Total'
       type={CATEGORIES.TOTAL}

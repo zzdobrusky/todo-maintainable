@@ -1,4 +1,4 @@
-import { CATEGORIES } from "../types/types";
+import { CATEGORIES } from "types";
 
 export const CategoryButton = ({ title, type, number, switchCategory }: {
   title: string,

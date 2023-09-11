@@ -1,7 +1,7 @@
-import { TodoType } from "../types/types";
-import { EditTodoInput } from "./EditTodoInput";
+import { TodoType } from "types";
+import { EditTodoInput } from "components/inputs/EditTodoInput";
 
-import './Todo.css';
+import styles from './index.module.css';
 
 export const TodoList = (
   {
@@ -21,7 +21,7 @@ export const TodoList = (
   return (
     <div>
       {todos.map((todo: TodoType) => (
-        <div key={todo.id} className='todo-item' data-testid='todo-item'>
+        <div key={todo.id} className={styles.todo_item} data-testid='todo-item'>
           <EditTodoInput
             todo={todo}
             onChangeItem={onChangeItem}
@@ -30,7 +30,7 @@ export const TodoList = (
             onToggleEditItem={onToggleEditItem}
           />
 
-          <div className='todo-btn'>
+          <div className={styles.todo_btn}>
             <button
               data-testid='delete-button'
               onClick={() => onDeleteItem(todo)}>Delete

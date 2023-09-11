@@ -1,5 +1,7 @@
 import { ChangeEvent } from 'react';
-import { useShortcutKey } from '../hooks/useShortcutKey';
+import { useShortcutKey } from 'hooks/useShortcutKey';
+
+import styles from './shared.module.css';
 
 export const SearchInput = ({ performSearch }: { performSearch: (value: string) => void; }) => {
   const { inputRef } = useShortcutKey('s');
@@ -13,7 +15,7 @@ export const SearchInput = ({ performSearch }: { performSearch: (value: string) 
       ref={inputRef}
       type='text'
       data-testid='search-input'
-      className='todo-input'
+      className={styles.todo_input}
       placeholder='Type to search...'
       onChange={handleSearch}
     />

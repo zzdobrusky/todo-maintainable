@@ -1,9 +1,9 @@
 import { useState, ChangeEvent, KeyboardEvent } from "react";
 import { v4 as uuid } from 'uuid';
-import { TodoType } from "../types/types";
-import { useShortcutKey } from "../hooks/useShortcutKey";
+import { TodoType } from "types";
+import { useShortcutKey } from "hooks/useShortcutKey";
 
-import './Todo.css';
+import styles from './shared.module.css';
 
 export const TodoInput = ({ onItemAdded }: { onItemAdded: (todo: TodoType) => void }) => {
   const [content, setContent] = useState<string>('');
@@ -25,7 +25,7 @@ export const TodoInput = ({ onItemAdded }: { onItemAdded: (todo: TodoType) => vo
       ref={inputRef}
       type='text'
       data-testid='todo-input'
-      className='todo-input'
+      className={styles.todo_input}
       onChange={handleChange}
       onKeyDown={handleKeyDown}
       placeholder='Type to add item, enter to confirm...'

@@ -1,17 +1,17 @@
-import { TodoInput } from './TodoInput';
+import { TodoInput } from 'components/inputs/TodoInput';
+import { SearchInput } from 'components/inputs/SearchInput';
 import { TodoList } from './TodoList';
-import { useTodos } from '../hooks/useTodos';
 import { Aggregation } from './Aggregation';
-import { TodoType } from "../types/types";
-import { SearchInput } from './SearchInput';
+import { useTodos } from 'hooks/useTodos';
+import { TodoType } from "types";
 
-import './Todo.css';
+import styles from './index.module.css';
 
 export const Todo = ({ items }: { items?: TodoType[] }) => {
   const { displayTodos, addTodo, deleteTodo, toggleTodo, toggleEdit, changeTodo, switchCategory, aggregation, search } = useTodos(items);
 
   return (
-    <div className='todo_container'>
+    <div className={styles.todo_container}>
       <h1>todos</h1>
       <TodoInput onItemAdded={addTodo} />
       <Aggregation aggregation={aggregation} switchCategory={switchCategory} />

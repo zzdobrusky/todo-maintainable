@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 
-
 export const useShortcutKey = (keyboardKey: string) => {
   const inputRef = useRef<HTMLInputElement>(null);
 

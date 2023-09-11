@@ -1,5 +1,5 @@
 import { render, screen, within } from '@testing-library/react';
-import { Todo } from './Todo';
+import { Todo } from '../index';
 import userEvent from '@testing-library/user-event';
 
 const items = [
